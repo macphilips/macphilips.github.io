@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account | MyDiary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/app.js"></script>
+</head>
+<body>
+<div class="container">
+    <form class="form-container">
+        <div class="card">
+            <h1>Create Account</h1>
+            <hr>
+            <div class="row-col-2">
+                <div>
+                    <label for="first_name"><b>First name</b></label>
+                    <input class="form-input" id="first_name" type="text" placeholder="First name" name="first_name"
+                           required>
+                </div>
+                <div>
+                    <label for="last_name"><b>Last name</b></label>
+                    <input class="form-input" id="last_name" type="text" placeholder="Last name" name="last_name"
+                           required>
+                </div>
+            </div>
+
+            <label for="email"><b>Email</b></label>
+            <input class="form-input" id="email" type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="password"><b>Password</b></label>
+            <input class="form-input" id="password" type="password" placeholder="Enter Password" name="password"
+                   required>
+
+            <label for="match-password"><b>Repeat Password</b></label>
+            <input class="form-input" id="match-password" type="password" placeholder="Confirm Password"
+                   name="match-password" required>
+            <hr>
+
+            <button type="submit" class="btn">Register</button>
+
+            <div class="extra">
+                <p>Already have an account? <a href="signin.html">Sign in</a>.</p>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
