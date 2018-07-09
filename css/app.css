@@ -407,7 +407,22 @@ table {
     -webkit-animation-name: animate-top;
     -webkit-animation-duration: 0.4s;
     animation-name: animate-top;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
+}
+
+.modal-content.sm {
+    display: block;
+    width: 420px;
+}
+
+.modal-content.md {
+    display: block;
+    width: 504px;
+}
+
+.modal-content.lg {
+    display: block;
+    width: 750px;
 }
 
 /* Modal Head Section*/
@@ -746,18 +761,9 @@ table {
     color: #222;
     font-family: Courier, monospace;
     font-weight: normal;
-    font-size: 18px;
     resize: none;
     word-wrap: break-word;
     line-height: 20px;
-    padding: 25px 40px;
-    /*
-    padding: 45px 10px 34px 100px;
-    background: #FFF url('../images/lines.png') repeat-y;
-    border-radius: 12px;
-    -webkit-border-radius: 10px;
-    */
-    border: 1px solid #eee;
 }
 
 .create-entry textarea::-webkit-scrollbar {
@@ -773,9 +779,11 @@ table {
     background: #ddd;
     visibility: hidden;
 }
+
 .create-entry textarea:focus::-webkit-scrollbar-thumb {
     visibility: hidden;
 }
+
 .create-entry textarea:hover::-webkit-scrollbar-thumb {
     visibility: visible;
 }
