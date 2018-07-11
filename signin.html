@@ -4,32 +4,43 @@
     <meta charset="UTF-8">
     <title>Sign in | MyDiary</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/app.css">
-    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/app.css?t=dd">
+    <script src="js/signin.js"></script>
 </head>
 <body>
 <div class="container">
-    <form class="form-container signin">
-        <div class="card">
-            <h1>Sign in</h1>
+    <div class="card form-container signin">
+        <div class="form-login-header">
+            <img class="logo" src="images/logo-preview.gif">
+        </div>
+        <form id="signinForm" name="signinForm" class="">
+            <div class="form-title">
+                <span>Welcome, please sign in</span>
+            </div>
             <hr>
-            <label for="username"><b>Username</b></label>
-            <input id="username" type="text" placeholder="Enter Username" name="username" required>
+            <div>
+                <div id="alert" class="alert error">
+                    <p class="alert-msg"></p>
+                    <a href="javascript:void(0);" class="close-btn">&times;</a>
+                </div>
+                <label for="username"><b>Username</b></label>
+                <input class="form-input" id="username" type="email" placeholder="Enter Email" name="username" required>
 
-            <label for="password"><b>Password</b></label>
-            <input id="password" type="password" placeholder="Enter Password" name="password" required>
+                <label for="password"><b>Password</b></label>
+                <input class="form-input" id="password" type="password" placeholder="Enter Password" name="password"
+                       required>
 
-            <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-            </label>
-
-            <button class="btn" type="submit">Login</button>
-
-            <div class="extra">
+                <label>
+                    <input type="checkbox" checked="checked" name="rememberme"> Remember me
+                </label>
+                <button class="btn" type="submit" onclick="signIn();">Login</button>
+            </div>
+            <div class="form-footer">
                 <p>Don't have an account? <a href="signup.html">Sign up</a>.</p>
             </div>
-        </div>
-    </form>
+
+        </form>
+    </div>
 </div>
 
 </body>
