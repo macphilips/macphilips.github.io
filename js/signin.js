@@ -40,7 +40,6 @@ function showAlert(msg, type) {
     alert.classList.add(type);
     var msgElement = alert.querySelector('.alert-msg');
     var closeElement = alert.querySelector('.close-btn');
-    console.log('closeElement => ' ,closeElement);
     var closeHandler = function () {
         alert.style.display = 'none';
     };
@@ -52,7 +51,6 @@ function showAlert(msg, type) {
 }
 
 function createAccount(e) {
-    console.log('creating account => ', e);
     e.preventDefault();
     var form = document.getElementById('signupForm');
     if (validateForm(form)) {
@@ -61,15 +59,13 @@ function createAccount(e) {
 }
 
 function signIn(e) {
-    console.log('signing in => ', e);
     if (e) e.preventDefault();
     var form = document.getElementById('signinForm');
     if (validateForm(form)) {
         var formJson = toJSONString(form);
-        console.log(formJson);
         // todo get authentication token from server
-         localStorage.authenticationToken = formJson;
-         window.location.replace('index.html');
+        localStorage.authenticationToken = formJson;
+        window.location.replace('index.html');
     }
 }
 
@@ -86,7 +82,6 @@ function toJSONString(form) {
         var value = element.value;
         if (element.type === 'checkbox') {
             value = element.checked;
-            console.log(value);
         }
 
         if (name) {

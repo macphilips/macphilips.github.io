@@ -4,6 +4,14 @@
     border: none;
 }
 
+html, body {
+    min-width: 100%;
+}
+
+html {
+    box-sizing: border-box
+}
+
 body {
     font-weight: 400;
     background-color: #f7f7f7;
@@ -61,6 +69,10 @@ hr {
 /*.card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }*/
+.hide {
+    visibility: hidden;
+    opacity: 0;
+}
 
 .btn {
     background-color: #4CAF50;
@@ -211,7 +223,7 @@ table {
 }
 
 .entry-table table tbody tr td .content {
-    max-width: 250px;
+    max-width: 450px;
     display: block;
     color: #555;
     overflow: hidden;
@@ -300,7 +312,10 @@ table {
 .dropdown-toggle {
     background-color: #fff;
     display: inline-block;
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-50%, -50%);
     font: 400 12px helvetica neue, Helvetica, Arial, sans-serif;
     text-decoration: none;
     text-align: left;
@@ -316,7 +331,7 @@ table {
 }
 
 .dropdown-toggle:hover:after {
-    border-top-color: #00b22d;
+    border-top-color: #c5c5c5;
 
 }
 
@@ -658,6 +673,17 @@ table {
     cursor: default
 }
 
+.action-btn-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-50%, 50%);
+}
+
+.action-btn-container > .action-btn {
+    margin-left: 15px;
+}
+
 .action-btn {
     height: 20px;
     opacity: .54;
@@ -709,6 +735,11 @@ table {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);*/
+}
+
+.delete {
+    background: url("../images/ic_delete.svg") no-repeat center;
+    background-size: 14px;
 
 }
 
@@ -825,4 +856,60 @@ table {
     color: #fff;
     right: 0;
     top: 0;
+}
+
+/*Loading*/
+.loading-container {
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 100;
+    color: #5f6368;
+    background: rgba(0, 0, 0, 0.47);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-ring {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+
+.loading-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 51px;
+    height: 51px;
+    margin: 6px;
+    border: 6px solid transparent;
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: loading-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.loading-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.loading-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.loading-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes loading-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

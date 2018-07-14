@@ -10,7 +10,7 @@ var deleteDialogTemple = `
             </span>
             <span tc-data-dismiss="modal"  class="close-btn close" role="button" tabindex="0" aria-label="Close"></span>
         </div>
-        <div class="modal-body">This action delete entry from database. Are you sure you want to continue?
+        <div tc-data-model="message" class="modal-body">This action delete entry from database. Are you sure you want to continue?
         </div>
         <div class="modal-footer">
             <button tc-data-action="ok" name="ok" class="btn-ok">OK</button>
@@ -23,15 +23,19 @@ var entryTableHeadTemplate = `
                 </td>
                 <td></td>
                 <td>
-                    <a  id="addEntry" title="Add Entry" class="action-btn add m-0" role="button"
+                    <div class="action-btn-container">                
+                        <a id="deleteEntry" title="Delete Entries" class="action-btn delete m-0 hide" role="button"
                           aria-label="Add"></a>
+                        <a id="addEntry" title="Add Entry" class="action-btn add m-0" role="button"
+                          aria-label="Add"></a>
+                    </div>
                 </td>
 
             </tr>
             <tr>
                 <td>
-                    <label onclick="selectAllEntry();" class="custom-checkbox">
-                        <input type="checkbox">
+                    <label class="custom-checkbox">
+                        <input tc-data-action="check" type="checkbox">
                         <span class="check-mark"></span>
                     </label>
                 </td>
@@ -41,9 +45,9 @@ var entryTableHeadTemplate = `
                 <td></td>
             </tr>`;
 var entryTableBodyRowTemplate = `
-            <tr data-index="{{position}}">
+            <tr>
                 <td><label class="custom-checkbox">
-                        <input tc-data-bind="check" type="checkbox">
+                        <input data-index="" tc-data-id="{{id}}" tc-data-action="check" type="checkbox">
                         <span class="check-mark"></span>
                     </label></td>
                 <td><p class="content" tc-data-model="content">This is a sample content</p></td>
@@ -52,7 +56,7 @@ var entryTableBodyRowTemplate = `
                 <td>
                     <div>
                         <div class="dropdown">
-                            <a data-index="0"  tc-data-action="dropdown-toggle" class="dropdown-toggle"></a>
+                            <a data-index=""  tc-data-action="dropdown-toggle" class="dropdown-toggle"></a>
                             <ul class="dropdown-menu">
                                 <li><a tc-data-action="view" href="javascript:void(0);">View</a></li>
                                 <li><a tc-data-action="edit" href="javascript:void(0);">Edit</a></li>
@@ -81,3 +85,12 @@ var createEntryTemplate = `
         </div>
     </form>
 `;
+var loadingTemplate = `
+    <div class="loading-container">
+        <div class="loading-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>`;
